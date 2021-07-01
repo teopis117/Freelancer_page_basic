@@ -1,0 +1,427 @@
+:root
+{
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris:#757575;
+    --grisclaro:#DFE9F3;
+}
+
+/* el codigo de css consta de 4 partes ,selector */
+
+html
+{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type:  y mandatory;
+}
+
+*,*::before,*::after
+{
+    box-sizing: inherit;
+}
+
+h1
+{
+    text-align: center;
+    font-size: 3.8rem;
+}
+
+/*  em= tamaño del padre 
+rem =el tamaño del documento  */
+
+h1 span
+{
+    font-size: 2rem;
+    
+}
+
+/* las clase son reutilizables */
+
+.titulo
+{
+    text-align: center;
+    font-size: 3.8rem;
+    /* con font family podemos cambiar la fuente de la letra */
+    font-family: 'Krub', sans-serif;
+    font-weight: 400;
+}
+
+
+.titulo span
+{
+    font-size: 2rem;
+    
+}
+/* especificidad
+ es como el navegador va a mostrar el css depende que tan especifico es nuestro sleector
+
+*/
+
+
+/* con display flex nos habilita todas las herramientas de flex y en especial justify content que nos ayuda a moverlo de forma horizontal y vertical tambien se pondra pero con otras cosas que veremos en un futuro */
+.navegacion-principal
+{
+   
+    display: flex;
+    /* con flex direction:  podemos determinar la direccion en que tendremos a  flexbox tenemos row(horizontal) y column(vertical) */
+    /* justify-content: ;   ----alineamiento horizontal
+    align-items: ;              ----aliean verticalmente                  */
+    
+    flex-direction: column;
+    
+    
+    
+}
+
+@media (min-width:768px){
+    
+    .navegacion-principal
+    {
+        flex-direction: row;
+        justify-content: space-evenly;
+}
+
+}  
+
+.navegacion-principal a
+{
+    display: block;
+    text-align: center;
+    color:var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    /* padding de adentro hacia afuera    */
+    padding: 1rem;
+}
+
+.contenedor
+{
+    max-width: 120rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.boton
+{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 10px 30px;
+    margin-top: 1rem;
+    font-size: 20px;
+    text-decoration: none;
+    /* con text transform:  podemos cambiar de minusculas a mayusculas y viceversa; */
+    text-transform: uppercase;
+    font-weight: bold;
+    /* para poder redonder los borders se hacer con border radius */
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+    
+}
+@media (min-width:480px){
+    .boton
+    {
+        width: auto;
+    }
+}
+
+
+.nav-bg
+{
+    background-color: var(--secundario);
+}
+.navegacion-principal a:hover
+{
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+body
+{
+    font-size: 16px;
+    font-family: 'Krub', sans-serif;
+    /* con gradients podemos degradar para darle una buena imagen */
+    background-image: linear-gradient(to top,#DFE9F3 0%,var(--blanco) 100%);
+    
+}
+
+
+/* de 480 para arriba aplicara todo este codigo
+480 px es un estandar */
+ 
+ .hero
+ {
+     background-image: url(/img/hero.jpg);
+     background-size: cover;
+     background-repeat: no-repeat;
+     height: 450px;
+    /* para utilizar la position relativa y absoluta necesitamos un elemento padre e hijo */
+    position: relative;
+ margin-bottom: 2rem;
+    }
+
+
+ .contenido-hero
+ {
+position: absolute;
+/* background-color: rgba(0, 0, 0,0.7); forma anterior */
+background-color: rgb(0 0 0 / 70%);
+width: 2rem;
+height: 2rem;
+width: 100%;
+height: 100%;
+/* FORMAS DE ALINEAR VERTICALMENTE */
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+ }
+
+
+ .contenido-hero h2,
+ .contenido-hero p
+ {
+
+color:var(--blanco);
+
+
+
+ }
+
+ h1
+{
+    font-size: 3.8rem;
+}
+
+h2
+{
+    font-size: 2.8rem;
+}
+
+h3
+{
+    font-size: 1.8rem;
+}
+
+/* para quitar el subrayado de un link se hace con text-decoration:none */
+.contenido-hero a
+{
+    text-decoration: none;
+}
+
+/* h1,h2,h3{
+    text-align: center;
+} */
+
+.ubicacion
+{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+/* para poder reutilizar varias cosas podemos utilizar una misma clase para ellos */
+
+/* hay varias paginas para poder hacer degradados de forma automatica como css matic */
+
+.sombra
+{
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+background-color: var(--blanco);
+padding: 2rem;
+border-radius: 1rem;
+}
+
+/* que es css grid?  nos permite definir los tamaños de nuestro contenido
+
+flexbox:el contenido crece
+grid el contenido se queda fijo
+
+*/
+
+/* scroll snap */
+.servicios,.navegacion-principal,.formulario
+{
+    scroll-snap-align: center;
+    scroll-snap-stop:always ;
+}
+
+@media (min-width:768px){
+
+    .servicios
+    {
+        display: grid;
+        /* 
+        fomra larga de escribirlo
+        grid-template-columns:300px 300px ;
+        grid-template-rows: 200px 800px; */
+    
+    /* forma corta de hacerlo 
+            grid: rows/columns  
+    fr=fraccion
+    */
+    grid-template-columns: repeat(3,1fr);
+    /* 1rem=10px */
+    column-gap: 10px;
+    }
+}
+    
+    /* en que casos en utilizar css grid o flexbox
+    
+    
+    utilziar flexbox para elementos dentro de contenedores 
+    -barras de navegacion
+    
+    css grid para la plantilla de mi pagina web o contenedores de mi contenido
+
+}         
+
+
+
+
+*/
+
+.servicio .iconos
+{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    /* al habilitar flexbox podemos utilizar justify content y align items para poder alinear en una direccion */
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.servicio 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio p
+{
+    /* par cambiar el interlineado es con line-heigth */
+    line-height: 2;
+    color: var(--secundario);
+    font-weight: normal;
+    text-align: center;
+}
+
+.formulario
+{
+background-color: var(--gris);
+/* min() utiliza el valor mas pequeño y si no toma el sigueinte */
+width: min(60rem,100%);
+margin: 0 auto;
+
+/* en que casos utilizar margin o auto o justify-content: ;
+margin = solo un elemento del padre no tenga display flex
+*/
+padding: 2rem;
+border-radius: 1rem;
+}
+.formulario fieldset
+{
+    border: none;
+}
+
+.formulario legend
+{
+    /* para centrar el contenido; */
+    text-align: center;
+    /* font-size:  para el tamaño de la fuente; */
+    font-size: 1.8rem;
+    /* text-transform:  para poder cambiar la fuente ya sea a mayusculas o minusculas etc ; */
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+
+@media (min-width:768px){     
+.contenedor-campos 
+{
+display: grid;
+grid-template-columns: repeat(2,1fr);
+/* para agregar columnas */
+grid-template-rows: auto auto 20rem;
+column-gap: 1rem;
+
+}
+.campo:nth-child(3)
+{
+    grid-column: 1/3 ;
+}
+.campo:nth-child(4)
+{
+    grid-column: 1/3;
+}
+}
+.campo
+{
+    margin-bottom: 1rem;
+}
+.campo label
+{
+    color: var(--blanco);
+font-weight: bold;
+margin-bottom: .5rem;
+display: block;
+}
+
+/* diferentes formas de editar un formulario */
+
+.input-text
+{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+.boton:hover
+{
+    cursor: pointer;
+}
+.enviar .boton
+{
+width: 100%;
+margin-top: 4rem;
+}
+/* utilidades */
+.w-100
+{
+    width: 100%;
+}
+.alinear-derecha
+{
+justify-content: flex-end;
+}
+.flex
+
+{
+    display: flex;
+}
+@media (min-width:768px){
+    .w-100
+    {
+        width: auto;
+    }
+
+
+}
+
+.campo textarea
+
+{
+    height:20rem;
+    width: 100%;
+}

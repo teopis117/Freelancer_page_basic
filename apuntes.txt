@@ -1,0 +1,90 @@
+la principal etiqueta es html <html> </html>
+
+<head>--- informacion inportante para el navegador
+<body>--- lo que el navegador va a mostrar
+
+html no es un lenguaje de  programacion
+ademas que html no es un lenguaje muy estricto en sintaxis
+
+
+todas las etiquetas por general se utilizan en minusculas aunque tambien puede hacerce en mayusculas
+
+ESTRUCTURA EL CONTENIDO DE HTML
+el contenido superior-header
+navegacion del sitio-nav
+contenido principal--main
+entradas,noticias(izquierdo)-article
+contenido en derecha---------aside
+parte inferior de la pagina--footer
+
+estructurar es similar a agruapar
+
+diferentes maneras de ecribir en css
+seleccionar elemento: depende el elemento a su etiqueta
+(seleccionaremos a todos los elementos de ese tipo)
+p 
+{
+    color:blue
+}
+
+selector de clase
+
+.cliente
+{
+    color:blue
+}
+
+selector de id 
+
+#cliente{
+    color:blue;
+}
+
+
+combinacion de descendentes 
+
+.clientes .nombre
+{
+    color:blue;
+}
+
+
+todos los hijos
+(se le aplica a todos los parrafos hijos de cliente)
+.cliente > p 
+{
+color:blue;
+
+}
+
+display: block lo que se colocara uno de bajo de otro y ocuparan todo el ancho
+
+display:inline significa que los elementos se posicionaran a la derecha del elemento
+
+ 
+ flexbox fue diseñado  como un modelo unidimensional para crear layouts
+
+ flexbox se puede utilizar para distribuir elementos  en fila(row) o columna(column)
+
+ flexbox solo sirve para alinear elementos en el layouts y viene a sustituir a los floats
+
+ ¿como escribir codigo en css?
+ BEM,UTILITY FIRST O MODULO
+
+BEM= BLOQUES,ELEMENTOS Y MODIFICADORES 
+.card{}
+.card__titulo{}
+.card__imagen{}
+.card__boton{}
+.card__boton--activo{}
+
+Utility FIRST
+.text-center{}
+.color-red-100{}
+
+
+Responsive Web Desing
+
+css box model todo es una caja
+
+el tamaño de lo que se muestra en la pantalla esta delimitado por 4 cosas,el tamño de contenido,el tamaño del borde y el margen
